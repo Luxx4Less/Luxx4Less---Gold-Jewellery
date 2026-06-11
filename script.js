@@ -2,6 +2,13 @@
 document.querySelectorAll('.open-product').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const card = e.target.closest('.card');
+    const customUrl = card.dataset.url;
+
+    if (customUrl) {
+      window.open(customUrl, '_blank');
+      return;
+    }
+
     const name = card.dataset.name;
     const price = card.dataset.price;
     const desc = card.dataset.desc;
@@ -22,6 +29,16 @@ document.getElementById('closeModal').addEventListener('click', () => {
 document.getElementById('productModal').addEventListener('click', (e) => {
   if (e.target.id === 'productModal') {
     document.getElementById('productModal').hidden = true;
+  }
+});
+
+// Close modal on Escape key
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('productModal');
+    if (!modal.hidden) {
+      modal.hidden = true;
+    }
   }
 });
 

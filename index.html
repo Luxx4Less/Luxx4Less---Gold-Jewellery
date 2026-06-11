@@ -170,13 +170,29 @@
       background: rgba(0, 0, 0, 0.5);
     }
 
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.72);
+      padding: 1.5rem;
+      z-index: 50;
+    }
+
+    .modal[hidden] {
+      display: none;
+    }
+
     .modal-content {
+      position: relative;
       max-width: 30rem;
       width: 100%;
       background: rgba(15, 15, 15, 0.98);
       padding: 2rem;
       border-radius: 1rem;
       color: #fff;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
     }
 
     .close {
@@ -250,7 +266,7 @@
           <button class="btn open-product">View</button>
         </article>
 
-        <article class="card" data-name="Gold Necklace" data-price="P10,000" data-desc="Design your bespoke piece">
+        <article class="card" data-name="Custom Necklace" data-price="P10,000" data-desc="Design your bespoke piece" data-url="https://www.facebook.com/photo.php?fbid=1369421505291854&amp;set=pb.100066720531622.-2207520000&amp;type=3">
           <div class="img" aria-hidden="true"><img src="gold-sale.jpg" alt="Custom Necklace"></div>
           <h4>Custom Necklace</h4>
           <p class="price">P10,000</p>
