@@ -1,0 +1,305 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Luxx4Less — You can get less price of fine gold and luxurious jewellerry ." />
+  <title>Luxx4Less — Gold & Jewellery</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: system-ui, sans-serif;
+      color: #fff;
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("Logo.jpg") center/cover no-repeat fixed;
+      background-attachment: fixed;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .brand {
+      font-size: clamp(1.7rem, 2.5vw, 2.8rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #f9f3df;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 0 4rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    .hero p {
+      max-width: 34rem;
+      color: #f4ecd7;
+      margin: 1.5rem 0 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #111;
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .products .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .img {
+      width: 100%;
+      min-height: 220px;
+      overflow: hidden;
+      border-radius: 1rem;
+      margin-bottom: 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      display: grid;
+      place-items: center;
+    }
+
+    .card .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card h4,
+    .card p,
+    .card .btn {
+      color: #fff;
+    }
+
+    .about,
+    .contact {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    label,
+    .price {
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      margin-top: 0.5rem;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .site-footer {
+      padding: 1.5rem 0;
+      text-align: center;
+      margin-top: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      max-width: 30rem;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.98);
+      padding: 2rem;
+      border-radius: 1rem;
+      color: #fff;
+    }
+
+    .close {
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Luxx4Less</h1>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Exquisite Gold & Timeless Jewellery</h2>
+        <p>Less prices pieces, ethically sourced of luxurious jewellery, exceptional value.</p>
+        <a class="btn" href="#products">Explore Collection</a>
+      </div>
+    </section>
+
+    <section id="products" class="container products">
+      <h3>Featured Pieces</h3>
+      <div class="grid">
+        <article class="card" data-name="Classic Gold Ring" data-price="$499" data-desc="18k gold, polished finish">
+          <div class="img" aria-hidden="true"><img src="Logo.jpg" alt="Classic Gold Ring"></div>
+          <h4>Classic Gold Ring</h4>
+          <p class="price">$499</p>
+          <button class="btn open-product">View</button>
+        </article>
+
+        <article class="card" data-name="Diamond Pendant" data-price="$1,299" data-desc="14k gold with solitaire diamond">
+          <div class="img" aria-hidden="true"><img src="Logo.jpg" alt="Diamond Pendant"></div>
+          <h4>Diamond Pendant</h4>
+          <p class="price">$1,299</p>
+          <button class="btn open-product">View</button>
+        </article>
+
+        <article class="card" data-name="Pearl Earrings" data-price="$349" data-desc="Freshwater pearls, gold posts">
+          <div class="img" aria-hidden="true"><img src="Logo.jpg" alt="Pearl Earrings"></div>
+          <h4>Pearl Earrings</h4>
+          <p class="price">$349</p>
+          <button class="btn open-product">View</button>
+        </article>
+
+        <article class="card" data-name="Gold Bracelet" data-price="$799" data-desc="Comfort-fit 22k gold bangle">
+          <div class="img" aria-hidden="true"><img src="bracelet-sale.jpg" alt="Gold Bangle"></div>
+          <h4>Gold Bangle</h4>
+          <p class="price">P20,000</p>
+          <button class="btn open-product">View</button>
+        </article>
+
+        <article class="card" data-name="Emerald Ring" data-price="$899" data-desc="Vintage-style emerald cut">
+          <div class="img" aria-hidden="true"><img src="Logo.jpg" alt="Emerald Ring"></div>
+          <h4>Emerald Ring</h4>
+          <p class="price">$899</p>
+          <button class="btn open-product">View</button>
+        </article>
+
+        <article class="card" data-name="Gold Necklace" data-price="P10,000" data-desc="Design your bespoke piece">
+          <div class="img" aria-hidden="true"><img src="gold-sale.jpg" alt="Custom Necklace"></div>
+          <h4>Custom Necklace</h4>
+          <p class="price">P10,000</p>
+          <button class="btn open-product">View</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About Luxx4Less</h3>
+      <p>We craft fine gold and jewellery with attention to quality, ethical sourcing, and beautiful design. Visit our store or contact us for custom orders.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact Us</h3>
+      <form id="contactForm">
+        <label>
+          Name
+          <input type="text" name="name" id="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" id="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </label>
+        <button class="btn" type="submit">Send Message</button>
+        <p id="formMsg" class="muted" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Luxx4Less — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="productModal" class="modal" hidden>
+    <div class="modal-content">
+      <button id="closeModal" class="close">×</button>
+      <h4 id="modalName"></h4>
+      <p id="modalDesc"></p>
+      <p id="modalPrice" class="price"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
